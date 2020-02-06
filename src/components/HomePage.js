@@ -4,6 +4,8 @@ const HomePage = () => {
 
     return(
         <div>
+            <button>Sig Up</button>
+            <button>Sig In</button>
         </div>
     )
 }
