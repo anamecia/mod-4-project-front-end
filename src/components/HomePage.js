@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 
 class HomePage extends Component {
 
     render (){
         return(
             <div>
-                <button>Sign Up</button>
-                <button>Sign In</button>
+                <Link to='/signup'>Sign Up</Link>
+                <Link to='signin'>Sign In</Link>
             </div>
         )
     } 
