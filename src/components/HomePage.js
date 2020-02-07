@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-const HomePage = () => {
+class HomePage extends Component {
 
-    return(
-        <div>
-            <button>Sig Up</button>
-            <button>Sig In</button>
-        </div>
-    )
+    render (){
+        return(
+            <div>
+                <button>Sig Up</button>
+                <button>Sig In</button>
+            </div>
+        )
+    } 
 }
 
 export default HomePage
