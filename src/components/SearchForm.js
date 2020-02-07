@@ -1,12 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-const SearchForm = () => {
+class SearchForm extends Component {
 
-    return(
-        <>
-        <input placeholder='Title/Author/Isbn'/>
-        </>
-    )
+    state = {
+        searchTerm: ''
+    }
+
+    handleOnChange = (e) => {
+        this.setState({
+            searchTerm: e.target.value
+        })
+    }
+
+    render(){
+        return(
+            <>
+            <input type='text' placeholder='Title/Author/Isbn' onChange={this.handleOnChange}/>
+            </>
+        )
+    }
 }
 
 export default SearchForm
