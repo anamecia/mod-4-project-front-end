@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MainImage from './MainImage.js'
+
 
 class SignUpPage extends Component {
 
@@ -26,6 +28,7 @@ class SignUpPage extends Component {
                     <input type='password' name='passwordConfirmation' onChange={this.handleOnChange}/>
                     <input type='Submit'/>
                 </form>
+                <MainImage />
             </div>
         )
     }  
