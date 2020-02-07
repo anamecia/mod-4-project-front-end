@@ -29,7 +29,7 @@ class SignUpPage extends Component {
                     <input type='password' name='passwordConfirmation' onChange={this.handleOnChange}/>
                     <input type='Submit'/>
                 </form>
-                <p>Already have an AppName account? <Link to='/singin'> Sign In </Link></p>
+                <p>Already have an AppName account? <Link to='/signin'> Sign In </Link></p>
                 <MainImage />
             </div>
         )
