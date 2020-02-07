@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MainImage from './MainImage.js'
+
 
 class SignInPage extends Component {
 
@@ -23,7 +25,8 @@ class SignInPage extends Component {
                     <input type='password' name='password' onChange={this.handleOnChange}/>
                     <input type='Submit'/>
                 </form>
-            </div>
+                <MainImage />
+            </div>  
         )
     }  
 }
