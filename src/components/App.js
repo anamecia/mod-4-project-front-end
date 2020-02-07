@@ -14,6 +14,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/signup' component={SignUpPage}/>
         <Route exact path='/signin' component={SignInPage}/>
+        <Route component={props => <h1>404 - Page not found</h1>} />
       </Switch>
     </div>
   );
