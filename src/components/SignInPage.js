@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 import MainImage from './MainImage.js'
 
 
@@ -25,6 +27,8 @@ class SignInPage extends Component {
                     <input type='password' name='password' onChange={this.handleOnChange}/>
                     <input type='Submit'/>
                 </form>
+                <p>Create an account: <Link to='/signup'> Sign Up </Link></p>
+
                 <MainImage />
             </div>  
         )
