@@ -5,8 +5,8 @@ class HomePage extends Component {
     render (){
         return(
             <div>
-                <button>Sig Up</button>
-                <button>Sig In</button>
+                <button>Sign Up</button>
+                <button>Sign In</button>
             </div>
         )
     } 
