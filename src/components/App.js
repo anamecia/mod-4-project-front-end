@@ -8,8 +8,8 @@ import SignInPage from './SignInPage';
 
 function App() {
   return (
-    <div className="column">
-      <div className="row">
+    <div className="column ">
+      <div id="navbar" className="ui grid">
         <NavBar />
       </div>
       <div className="row content-container">

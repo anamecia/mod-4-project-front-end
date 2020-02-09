@@ -17,12 +17,16 @@ class  NavBar extends Component {
 
     render(){
         return(
-            <div>
-                <Link to='/'>AppName</Link>
-                <label onClick={this.toggleSearchForm}>Search</label>
-                {this.state.displaySearchForm && <SearchForm />}
-                <Link to='/'>Sign Out </Link>
+            <>  
+            <div className="eight wide column">
+                <Link to='/' className="column">AppName</Link>
             </div>
+            <div className="eight wide column">
+                <label className="column" onClick={this.toggleSearchForm}>Search</label>
+                {this.state.displaySearchForm && <SearchForm />}
+                <Link to='/' className="column">Sign Out </Link>
+            </div>
+            </>
         )
     }
     

@@ -2,8 +2,14 @@
  margin:4vw
 }
 
+#navbar{
+    display: fixed;
+    height: 10vh;
+    /* background-color: thistle; */
+}
+
 .member-btn-container{
-    padding-top:6vh;
+    padding-top:3vh;
 }
 
 #main-image {
@@ -26,4 +32,13 @@
 .member-btn:hover{
     color: #FBF8EA;
 }
+
+.sign-link{
+    color:#3264D0;
+}
+
+.sign-link:hover{
+    color: #F99D07;
+}
+
 
