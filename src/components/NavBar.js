@@ -15,14 +15,13 @@ class  NavBar extends Component {
         })
     }
 
-
     render(){
         return(
             <div>
                 <Link to='/'>AppName</Link>
                 <label onClick={this.toggleSearchForm}>Search</label>
                 {this.state.displaySearchForm && <SearchForm />}
-                <Link to='/'>Sig Out </Link>
+                <Link to='/'>Sign Out </Link>
             </div>
         )
     }

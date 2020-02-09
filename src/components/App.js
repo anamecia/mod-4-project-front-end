@@ -8,14 +8,18 @@ import SignInPage from './SignInPage';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/signup' component={SignUpPage}/>
-        <Route exact path='/signin' component={SignInPage}/>
-        <Route component={props => <h1>404 - Page not found</h1>} />
-      </Switch>
+    <div className="column">
+      <div className="row">
+        <NavBar />
+      </div>
+      <div className="row content-container">
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/signup' component={SignUpPage}/>
+          <Route exact path='/signin' component={SignInPage}/>
+          <Route component={props => <h1>404 - Page not found</h1>} />
+        </Switch>
+      </div>
     </div>
   );
 }
