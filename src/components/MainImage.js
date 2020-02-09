@@ -4,7 +4,7 @@ import MainImg from '../images/2785837.svg'
 const MainImage = () => {
     
     return(
-        <img src={MainImg}/>
+        <img id='main-image' alt='people reading' src={MainImg}/>
     )
 }
 
