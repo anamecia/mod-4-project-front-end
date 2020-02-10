@@ -46,7 +46,7 @@ class  App extends Component{
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
-            <Route exact path='/signup' component={SignUpPage}/>
+            <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
             <Route exact path='/books' component={BooksContainer}/>
             <Route component={props => <h1>404 - Page not found</h1>} />
           </Switch>
