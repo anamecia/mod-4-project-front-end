@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import MainImage from './MainImage.js'
+import API from './API.js'
+
 
 class SignUpPage extends Component {
 
     state = {
-        username: null,
-        password: null,
-        passwordConfirmation: null
+        username: '',
+        password: '',
+        passwordConfirmation: ''
     }
 
     handleOnChange = (e) => {
@@ -17,11 +19,21 @@ class SignUpPage extends Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        API.signUp(this.state.username, this.state.password, this.state.passwordConfirmation)
+            .then(data => {
+                if (data.error) throw Error(data.error)
+                this.props.signIn(data)
+            })
+            .catch(error => alert(error))
+    }
+
     render(){
         return(
             <div className="ui grid">
                 <div className="five wide column centered middle aligned">
-                    <form className="ui form" onSubmit={null}>
+                    <form className="ui form" onSubmit={this.handleSubmit}>
                         <div className="field">
                             <label>Username:</label>
                             <input type='text' name='username' onChange={this.handleOnChange}/>

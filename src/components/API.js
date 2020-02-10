@@ -4,6 +4,7 @@ const baseUrl = 'http://localhost:3000/'
 const booksUrl = baseUrl + 'books'
 const signInUrl = baseUrl + 'signin'
 const validateUrl = baseUrl + 'validate'
+const signUpUrl = baseUrl + 'signup'
 
 
     const get = (url) => 
@@ -19,6 +20,9 @@ const validateUrl = baseUrl + 'validate'
             body: JSON.stringify(data)
         }).then(resp => resp.json())
 
+
+    const signUp = (username, password, passwordConfirmation) => post(signUpUrl, {user: {username, password, password_confirmation: passwordConfirmation}})
+
     const getBooks = () => get(booksUrl)
 
     const signIn = (username, password) => post(signInUrl, { username, password })
@@ -31,4 +35,4 @@ const validateUrl = baseUrl + 'validate'
         }).then(resp => resp.json())
 
 
-export default { getBooks, signIn, validate}
+export default { getBooks, signIn, validate, signUp}
