@@ -24,6 +24,7 @@ class SignInPage extends Component {
           .then(data => {
             if (data.error) throw Error(data.error)
             this.props.signIn(data)
+            this.props.history.push('/userbooks')
            
           })
           .catch(error => alert(error))

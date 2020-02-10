@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+
 
 import HomePage from './HomePage';
 import NavBar from './NavBar';
@@ -7,6 +8,7 @@ import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import BooksContainer from './BooksContainer';
 import API from './API';
+import UserShowPage from './UserShowPage';
 
 class  App extends Component{
 
@@ -30,6 +32,7 @@ class  App extends Component{
       .then(data => {
         if (data.error) throw Error(data.error)
         this.signIn(data)
+        this.props.history.push('/userbooks')
        
       })
       .catch(error => alert(error))
@@ -48,6 +51,7 @@ class  App extends Component{
             <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
             <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
             <Route exact path='/books' component={BooksContainer}/>
+            <Route exact path='/userbooks' component={props => <UserShowPage {...props} signIn={this.state.usename}/>}/>
             <Route component={props => <h1>404 - Page not found</h1>} />
           </Switch>
         </div>
@@ -57,4 +61,4 @@ class  App extends Component{
   
 }
 
-export default App;
+export default withRouter(App)
