@@ -24,7 +24,7 @@ class  NavBar extends Component {
             <div className="eight wide column">
                 <label className="column" onClick={this.toggleSearchForm}>Search</label>
                 {this.state.displaySearchForm && <SearchForm />}
-                <Link to='/' className="column">Sign Out </Link>
+                <Link to='/' onClick={this.props.signOut}className="column">Sign Out </Link>
             </div>
             </>
         )
