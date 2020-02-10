@@ -5,6 +5,7 @@ import HomePage from './HomePage';
 import NavBar from './NavBar';
 import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
+import BooksContainer from './BooksContainer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/signup' component={SignUpPage}/>
           <Route exact path='/signin' component={SignInPage}/>
+          <Route exact path='/books' component={BooksContainer}/>
           <Route component={props => <h1>404 - Page not found</h1>} />
         </Switch>
       </div>

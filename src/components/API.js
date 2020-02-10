@@ -1,7 +1,16 @@
 import React from 'react'
 
-const API = () => {
+const baseUrl = 'http://localhost:3000/'
+const booksUrl = baseUrl + 'books'
 
-}
 
-export default API
+    const get = (url) => {
+        return fetch(url)
+        .then(resp => resp.json())
+    }
+
+    const getBooks = () => get(booksUrl)
+    
+
+
+export default { getBooks }
