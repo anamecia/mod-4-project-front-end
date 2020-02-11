@@ -5,6 +5,7 @@ const booksUrl = baseUrl + 'userbooks'
 const signInUrl = baseUrl + 'signin'
 const validateUrl = baseUrl + 'validate'
 const signUpUrl = baseUrl + 'signup'
+const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
 
 
     const get = (url) => 
@@ -36,6 +37,8 @@ const signUpUrl = baseUrl + 'signup'
     const signIn = (username, password) => post(signInUrl, { username, password })
 
     const validate  = () => getwithauth(validateUrl)
+
+    const searchBook = (searchTerm) => get(googleApiUrl + searchTerm)
       
 
-export default { getBooks, signIn, validate, signUp}
+export default { getBooks, signIn, validate, signUp, searchBook}
