@@ -13,7 +13,8 @@ import UserShowPage from './UserShowPage';
 class  App extends Component{
 
   state = {
-    username: null
+    username: null,
+    searchTerm: null
   }
 
   signIn = (data) => {
@@ -39,11 +40,17 @@ class  App extends Component{
     }
   }
 
+  updateSearchTerm = (e) => {
+    this.setState({
+      searchTerm: e.target.value 
+    })
+  }
+
   render(){
     return (
       <div className="column ">
         <div id="navbar" className="ui grid">
-          <NavBar signOut={this.signOut}/>
+          <NavBar signOut={this.signOut} updateSearchTerm={this.updateSearchTerm}/>
         </div>
         <div className="row content-container">
           <Switch>
