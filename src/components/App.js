@@ -46,6 +46,10 @@ class  App extends Component{
     })
   }
 
+  // searchByBookName = () => {
+  //   console.log( API.searchBooks(this.state.searchTerm))
+  // }
+
   render(){
     return (
       <div className="column ">
@@ -57,8 +61,7 @@ class  App extends Component{
             <Route exact path='/' component={HomePage} />
             <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
             <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
-            <Route exact path='/books' component={BooksContainer}/>
-            <Route exact path='/userbooks' component={props => <UserShowPage {...props} signIn={this.state.usename}/>}/>
+            <Route exact path='/userbooks' component={props => <UserShowPage {...props} username={this.state.username}/>}/>
             <Route component={props => <h1>404 - Page not found</h1>} />
           </Switch>
         </div>
