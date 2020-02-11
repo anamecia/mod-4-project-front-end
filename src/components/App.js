@@ -47,7 +47,10 @@ class  App extends Component{
   }
 
   searchByBookName = () => {
-        API.searchBook(this.state.searchTerm)
+    if(this.state.username === null) {
+      this.props.history.push('/signin')
+    }else {
+      API.searchBook(this.state.searchTerm)
       .then(data => data.items.map((book) => {return{
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
@@ -55,6 +58,7 @@ class  App extends Component{
         image:book.volumeInfo.imageLinks.thumbnail || null,
         genre: book.volumeInfo.categories}}))
         .then(bookList => this.setState({searchedBooks: bookList}))
+      } 
     }
 
 
