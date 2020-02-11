@@ -17,9 +17,10 @@ class  UserShowPage extends Component {
     }
 
     render() { 
+        
         return (  
             <div>
-                {<BookContainer books={this.state.books} />}
+                {<BookContainer searchedBooks={this.props.searchedBooks} books={this.state.books}/>}
             </div>
         );
     }
