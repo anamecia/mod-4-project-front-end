@@ -5,9 +5,9 @@ class Book extends Component {
     render(){
         return (
            <div className="ui card">
-                <img src={this.props.book.image}/>
+                {/* <img src={this.props.book.image}/> */}
                 <h1>{this.props.book.title}</h1>
-                <p>{this.props.book.author}</p>
+                {/* <p>{this.props.book.author.join(', ')}</p> */}
             </div>
         
         )

@@ -2,17 +2,14 @@ import React, { Component } from 'react';
 import BookContainer from './BooksContainer'
 import API from './API'
 
-
-
 class  UserShowPage extends Component {
 
     state = {  
         books: []
     }
 
-  
     componentDidMount = () => {
-        if (this.props.username === null) {
+        if(this.props.username === null) {
             this.props.history.push('/signin')
         } else {
             API.getBooks().then(books => this.setState({books: books}))
@@ -20,11 +17,10 @@ class  UserShowPage extends Component {
     }
 
     render() { 
-
+        
         return (  
-
             <div>
-                {<BookContainer books={this.state.books} />}
+                {<BookContainer searchedBooks={this.props.searchedBooks} books={this.state.books}/>}
             </div>
         );
     }
