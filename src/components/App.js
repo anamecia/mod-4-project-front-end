@@ -8,6 +8,7 @@ import SignUpPage from './SignUpPage';
 import SignInPage from './SignInPage';
 import API from './API';
 import UserShowPage from './UserShowPage';
+import BookDetails from './BookDetails';
 
 class  App extends Component{
 
@@ -25,6 +26,17 @@ class  App extends Component{
   signOut = () => {
     this.setState({ username: null })
     localStorage.removeItem('token')
+  }
+
+  goToMyBooks = () => {
+    if(this.state.username === null) {
+      this.props.history.push('/signin')
+    }else {
+      this.setState({
+        searchedBooks: null,
+        searchTerm: ''
+      })
+    }
   }
 
   componentDidMount = () => {
@@ -52,21 +64,21 @@ class  App extends Component{
     }else {
       API.searchBook(this.state.searchTerm)
       .then(data => data.items.map((book) => {return{
+        googleId: book.id,
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
-        author:book.volumeInfo.authors,
-        image:book.volumeInfo.imageLinks.thumbnail || null,
+        authors: book.volumeInfo.authors,
+        image: book.volumeInfo.imageLinks.thumbnail || 'no image available ',
         genre: book.volumeInfo.categories}}))
         .then(bookList => this.setState({searchedBooks: bookList}))
       } 
     }
 
-
   render(){
     return (
       <div className="column ">
         <div id="navbar" className="ui grid">
-          <NavBar signOut={this.signOut} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName}/>
+          <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName}/>
         </div>
         <div className="row content-container">
           <Switch>
@@ -74,6 +86,7 @@ class  App extends Component{
             <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
             <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
             <Route exact path='/userbooks' component={props => <UserShowPage {...props} username={this.state.username}  searchTerm={this.state.searchTerm} searchedBooks={this.state.searchedBooks}/>}/>
+            <Route path='books/:id' component={BookDetails}/>
             <Route component={props => <h1>404 - Page not found</h1>} />
           </Switch>
         </div>

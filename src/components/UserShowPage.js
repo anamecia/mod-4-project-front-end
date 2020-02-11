@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BookContainer from './BooksContainer'
+import SearchedBookContainer from './SearchedBooksContainer'
 import API from './API'
+import UserBooksContainer from './UserBooksConteiner';
 
 class  UserShowPage extends Component {
 
@@ -17,10 +18,11 @@ class  UserShowPage extends Component {
     }
 
     render() { 
-        
         return (  
             <div>
-                {<BookContainer searchedBooks={this.props.searchedBooks} books={this.state.books}/>}
+                {this.props.searchedBooks
+                ? <SearchedBookContainer books={this.props.searchedBooks} username={this.props.username}/>
+                : <UserBooksContainer books={this.state.books} />}
             </div>
         );
     }
