@@ -6,6 +6,7 @@ import MainImage from './MainImage.js'
 
 class HomePage extends Component {
 
+
     render (){
         return(
             <div className="ui centered middle aligned grid">
