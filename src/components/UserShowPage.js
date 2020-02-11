@@ -21,7 +21,7 @@ class  UserShowPage extends Component {
         return (  
             <div>
                 {this.props.searchedBooks
-                ? <SearchedBookContainer books={this.props.searchedBooks}/>
+                ? <SearchedBookContainer books={this.props.searchedBooks} username={this.props.username}/>
                 : <UserBooksContainer books={this.state.books} />}
             </div>
         );
