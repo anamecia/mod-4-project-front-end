@@ -27,6 +27,17 @@ class  App extends Component{
     localStorage.removeItem('token')
   }
 
+  goToMyBooks = () => {
+    if(this.state.username === null) {
+      this.props.history.push('/signin')
+    }else {
+      this.setState({
+        searchedBooks: null,
+        searchTerm: ''
+      })
+    }
+  }
+
   componentDidMount = () => {
     if(localStorage.token){
       API.validate()
@@ -61,12 +72,11 @@ class  App extends Component{
       } 
     }
 
-
   render(){
     return (
       <div className="column ">
         <div id="navbar" className="ui grid">
-          <NavBar signOut={this.signOut} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName}/>
+          <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName}/>
         </div>
         <div className="row content-container">
           <Switch>
