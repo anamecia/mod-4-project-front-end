@@ -13,8 +13,6 @@ const UserBooksContainer = ({readBooks, wantToReadBooks, currentlyReadingBooks }
            {wantToReadBooks.map(book => <Book book={book.book} readingId={book.readingId} key={book.book.id} status={'Want to read'}/>)}
             <h3 className='row'> Read </h3>
            {readBooks.map(book => <Book book={book.book} readingId={book.readingId} key={book.book.id} status={'Read'}/>)}
-
-           
         </div>
     )
 }
