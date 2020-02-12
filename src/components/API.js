@@ -2,7 +2,7 @@ import React from 'react'
 
 const baseUrl = 'http://localhost:3000/'
 const bookUrl = baseUrl + 'books'
-const readingsUrl = baseUrl + 'readings'
+const readingsUrl = baseUrl + 'readings/'
 const userReadBooksUrl = baseUrl + 'userreadbooks'
 const userWantToReadBooksUrl = baseUrl + 'userwanttoreadbooks'
 const userCurrentlyReadingBooksUrl = baseUrl + 'usercurrentlyreadingbooks'
@@ -34,6 +34,16 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
             body: JSON.stringify(data)
         }).then(resp => resp.json())
 
+    const patch = (url, data, id) =>
+        fetch(url + id, {
+            method: 'PATCH',
+            headers:{
+                Authorization: localStorage.token,
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(resp => resp.json())
+
 
     const signUp = (username, password, passwordConfirmation) => post(signUpUrl, {user: {username, password, password_confirmation: passwordConfirmation}})
 
@@ -54,6 +64,9 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
     const saveReading = (data) => post (readingsUrl,data)
 
     const getReadings = () => get(readingsUrl)
-      
 
-export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading,}
+    const patchStatus = (data, id) => patch(readingsUrl, data, id)
+    
+
+
+export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus}
