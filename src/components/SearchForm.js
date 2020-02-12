@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SearchForm = ({ updateSearchTerm, searchByBookName }) => {
+const SearchForm = ({ updateSearchTerm, searchByBookName, searchTerm }) => {
     return(
         <>
-            <input id='search-form' type='text' placeholder='Title/Author' onChange={updateSearchTerm}/>
+            <input value={searchTerm} type='text' placeholder='Title/Author' onChange={updateSearchTerm}/>
             <input type='submit' onClick={searchByBookName}/>
         </>
     )

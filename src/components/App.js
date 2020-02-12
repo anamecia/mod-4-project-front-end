@@ -29,6 +29,8 @@ class  App extends Component{
   }
 
   goToMyBooks = () => {
+    const form = document.querySelector('#search-form')
+
     if(this.state.username === null) {
       this.props.history.push('/signin')
     }else {
@@ -78,7 +80,7 @@ class  App extends Component{
     return (
       <div className="column ">
         <div id="navbar" className="ui grid">
-          <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName}/>
+          <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName} searchTerm={this.state.searchTerm}/>
         </div>
         <div className="row content-container">
           <Switch>
