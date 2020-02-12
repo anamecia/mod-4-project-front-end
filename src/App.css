@@ -45,4 +45,11 @@
     height: 50vh;
 }
 
+.add-btn{
+    width: 25%;
+    padding: 0px;
+    background-color: #F99D07 ;
+    border-color: #F99D07;
+    color:  #FBF8EA;
+}
 
