@@ -3,7 +3,9 @@ import React from 'react'
 const baseUrl = 'http://localhost:3000/'
 const bookUrl = baseUrl + 'books'
 const readingsUrl = baseUrl + 'readings'
-const userbooksUrl = baseUrl + 'userbooks'
+const userReadBooksUrl = baseUrl + 'userreadbooks'
+const userWantToReadBooksUrl = baseUrl + 'userwanttoreadbooks'
+const userCurrentlyReadingBooksUrl = baseUrl + 'usercurrentlyreadingbooks'
 const signInUrl = baseUrl + 'signin'
 const validateUrl = baseUrl + 'validate'
 const signUpUrl = baseUrl + 'signup'
@@ -35,7 +37,11 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
 
     const signUp = (username, password, passwordConfirmation) => post(signUpUrl, {user: {username, password, password_confirmation: passwordConfirmation}})
 
-    const getBooks = () => getwithauth(userbooksUrl)
+    const getReadBooks = () => getwithauth(userReadBooksUrl)
+
+    const getWantToReadBooks = () => getwithauth(userWantToReadBooksUrl)
+
+    const getCurrentlyReadingBooks = () => getwithauth(userCurrentlyReadingBooksUrl)
 
     const signIn = (username, password) => post(signInUrl, { username, password })
 
@@ -46,6 +52,8 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
     const saveBook = (data) => post (bookUrl, data)
 
     const saveReading = (data) => post (readingsUrl,data)
+
+    const getReadings = () => get(readingsUrl)
       
 
-export default { getBooks, signIn, validate, signUp, searchBook, saveBook, saveReading}
+export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading,}
