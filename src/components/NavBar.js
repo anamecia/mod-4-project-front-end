@@ -17,17 +17,17 @@ class  NavBar extends Component {
 
     render(){
         return(
-            <>  
-            <div className="eight wide column">
-                <Link to='/' className="column">AppName</Link>
+            <div className='nav-bar'>  
+                <div className='logo'>
+                    <Link to='/' >Bettereads</Link>
+                </div>
+                <div className='nav-links'>
+                    <Link to='/userbooks' onClick={this.props.goToMyBooks}>My Books</Link>
+                    {/* <label  onClick={this.toggleSearchForm}>Search</label>
+                    {this.state.displaySearchForm && <SearchForm updateSearchTerm={this.props.updateSearchTerm} searchByBookName={this.props.searchByBookName} searchTerm={this.props.searchTerm}/>} */}
+                    <Link to='/' onClick={this.props.signOut}>Sign Out </Link>
+                </div>
             </div>
-            <div className="eight wide column">
-                <Link to='/userbooks' onClick={this.props.goToMyBooks}>My Books</Link>
-                <label className="column" onClick={this.toggleSearchForm}>Search</label>
-                {this.state.displaySearchForm && <SearchForm updateSearchTerm={this.props.updateSearchTerm} searchByBookName={this.props.searchByBookName} searchTerm={this.props.searchTerm}/>}
-                <Link to='/' onClick={this.props.signOut}className="column">Sign Out </Link>
-            </div>
-            </>
         )
     }
     
