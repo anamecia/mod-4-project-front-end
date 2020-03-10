@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import BookDetails from './BookDetails'
 import API from './API'
 
 class Book extends Component {
@@ -12,8 +11,6 @@ class Book extends Component {
         this.setState({ status: e.target.value})
     }
 
-
-
     handleClick = () => {    
         const data={ reading:{
             status: this.state.status
@@ -21,8 +18,6 @@ class Book extends Component {
         }
         API.patchStatus(data, this.props.readingId)
     }
-
-
 
     render(){
         return (

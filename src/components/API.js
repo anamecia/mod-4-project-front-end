@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 const baseUrl = 'http://localhost:3000/'
@@ -62,8 +63,6 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
     const saveBook = (data) => post (bookUrl, data)
 
     const saveReading = (data) => post (readingsUrl,data)
-
-    const getReadings = () => get(readingsUrl)
 
     const patchStatus = (data, id) => patch(readingsUrl, data, id)
     

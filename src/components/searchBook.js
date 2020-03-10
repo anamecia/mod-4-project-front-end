@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import BookDetails from './BookDetails'
 import API from './API'
 
 class Book extends Component {

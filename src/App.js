@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 
-import HomePage from './HomePage';
-import NavBar from './NavBar';
-import SignUpPage from './SignUpPage';
-import SignInPage from './SignInPage';
-import API from './API';
-import UserShowPage from './UserShowPage';
-import BookDetails from './BookDetails';
+import HomePage from './components/HomePage';
+import NavBar from './components/NavBar';
+import SignUpPage from './components/SignUpPage';
+import SignInPage from './components/SignInPage';
+import API from './components/API';
+import UserShowPage from './components/UserShowPage';
 
 class  App extends Component{
 
@@ -29,8 +28,6 @@ class  App extends Component{
   }
 
   goToMyBooks = () => {
-    const form = document.querySelector('#search-form')
-
     if(this.state.username === null) {
       this.props.history.push('/signin')
     }else {
@@ -78,17 +75,14 @@ class  App extends Component{
 
   render(){
     return (
-      <div className="column ">
-        <div id="navbar" className="ui grid">
-          <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName} searchTerm={this.state.searchTerm}/>
-        </div>
+      <div className='main-container'>
+        <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName} searchTerm={this.state.searchTerm}/>
         <div className="row content-container">
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
             <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
             <Route exact path='/userbooks' component={props => <UserShowPage {...props} username={this.state.username}  searchTerm={this.state.searchTerm} searchedBooks={this.state.searchedBooks}/>}/>
-            <Route path='books/:id' component={BookDetails}/>
             <Route component={props => <h1>404 - Page not found</h1>} />
           </Switch>
         </div>

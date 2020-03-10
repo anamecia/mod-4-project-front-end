@@ -1,11 +1,53 @@
-.content-container{
- margin:4vw
+
+body{
+    width: 100vw;
+    height: 100vh;
 }
 
-#navbar{
-    display: fixed;
-    height: 10vh;
-    /* background-color: thistle; */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* NAVBAR */
+
+.nav-bar{
+    display:flex;
+    align-content: center;
+    height: 10%;
+    width: 100%; 
+}
+
+.nav-bar div{
+    width: 50%;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-links a{
+    width: 20%;
+}
+
+.logo{
+   display: flex;
+   align-items: center;
+   height: 100%;
+   margin-left: 3%;
+}
+
+
+
+
+
+
+.content-container{
+ margin:4vw
 }
 
 .member-btn-container{
