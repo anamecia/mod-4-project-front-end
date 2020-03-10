@@ -32,13 +32,25 @@ body{
 
 .nav-links a{
     width: 20%;
+    color:#081E44;
+    font-weight: 600;
 }
 
-.logo{
+
+
+
+.logo-container{
    display: flex;
    align-items: center;
    height: 100%;
    margin-left: 3%;
+ 
+}
+
+.logo{
+    font-family: 'Abril Fatface';
+    font-size: 1.6rem;
+    color:#F99D07;
 }
 
 
