@@ -5,21 +5,21 @@ import SearchForm from './SearchForm'
 
 class  NavBar extends Component {
 
-    state = {
-        displaySearchForm: false
-    }
+    // state = {
+    //     displaySearchForm: false
+    // }
 
-    toggleSearchForm = () => {
-        this.setState({
-            displaySearchForm: !this.state.displaySearchForm
-        })
-    }
+    // toggleSearchForm = () => {
+    //     this.setState({
+    //         displaySearchForm: !this.state.displaySearchForm
+    //     })
+    // }
 
     render(){
         return(
             <div className='nav-bar'>  
-                <div className='logo'>
-                    <Link to='/' >Bettereads</Link>
+                <div className='logo-container'>
+                    <Link className='logo' to='/' >Bettereads</Link>
                 </div>
                 <div className='nav-links'>
                     <Link to='/userbooks' onClick={this.props.goToMyBooks}>My Books</Link>
