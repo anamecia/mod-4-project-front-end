@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
-
-import HomePage from './components/HomePage';
+import Style from './App.css'
+import HomePage from './pages/HomePage';
 import NavBar from './components/NavBar';
-import SignUpPage from './components/SignUpPage';
-import SignInPage from './components/SignInPage';
-import API from './components/API';
-import UserShowPage from './components/UserShowPage';
+import SignUpPage from './pages/SignUpPage';
+import SignInPage from './pages/SignInPage';
+import API from './API';
+import UserShowPage from './pages/UserShowPage';
 
 class  App extends Component{
 
   state = {
     username: null,
-    searchTerm: '',
-    searchedBooks: null
+
   }
 
   signIn = (data) => {
@@ -50,28 +49,6 @@ class  App extends Component{
       .catch(error => alert(error))
     }
   }
-
-  updateSearchTerm = (e) => {
-    this.setState({
-      searchTerm: e.target.value 
-    })
-  }
-
-  searchByBookName = () => {
-    if(this.state.username === null) {
-      this.props.history.push('/signin')
-    }else {
-      API.searchBook(this.state.searchTerm)
-      .then(data => data.items.map((book) => {return{
-        googleId: book.id,
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        authors: book.volumeInfo.authors,
-        image: book.volumeInfo.imageLinks.thumbnail || 'no image available ',
-        genre: book.volumeInfo.categories}}))
-        .then(bookList => this.setState({searchedBooks: bookList}))
-      } 
-    }
 
   render(){
     return (

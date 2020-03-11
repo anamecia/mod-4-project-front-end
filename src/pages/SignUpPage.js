@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-import MainImage from './MainImage.js'
-import API from './API'
+import MainImage from '../components/MainImage.js'
+import API from '../API.js'
 
 
-class SignInPage extends Component {
+class SignUpPage extends Component {
 
     state = {
         username: '',
         password: '',
+        passwordConfirmation: ''
     }
 
     handleOnChange = (e) => {
@@ -20,14 +21,14 @@ class SignInPage extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        API.signIn(this.state.username, this.state.password)
-          .then(data => {
-            if (data.error) throw Error(data.error)
-            this.props.signIn(data)
-            this.props.history.push('/userbooks')
-          })
-          .catch(error => alert(error))
-      }
+        API.signUp(this.state.username, this.state.password, this.state.passwordConfirmation)
+            .then(data => {
+                if (data.error) throw Error(data.error)
+                this.props.signIn(data)
+                this.props.history.push('/userbooks')
+            })
+            .catch(error => alert(error))
+    }
 
     render(){
         return(
@@ -42,17 +43,20 @@ class SignInPage extends Component {
                             <label>Password:</label>
                             <input type='password' name='password' onChange={this.handleOnChange}/>
                         </div>
-                    
-                        <input className='member-btn' type='Submit' value='Sign In'/>
-                        <p>Create an account: <Link className= "sign-link" to='/signup'> Sign Up </Link></p>
+                        <div className="field">
+                            <label>Password confirmation:</label>
+                            <input type='password' name='passwordConfirmation' onChange={this.handleOnChange}/>
+                        </div>
+                        <input className="member-btn" type='Submit' value='Sign Up'/>
+                        <p>Already have an Bettereads account? <Link  className="sign-link" to='/signin'> Sign In </Link></p>
                     </form>
                 </div>
                 <div className="main-image-container">
                     <MainImage />
                 </div>
-            </div>  
+            </div>
         )
     }  
 }
 
-export default SignInPage
+export default SignUpPage

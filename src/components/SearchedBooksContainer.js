@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Book from './searchBook'
+import Book from './SearchBook'
 
 const SearchedBooksContainer = ({books, username}) => {
 
