@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
-import AppCss from '../App.css'
 
-import MainImage from './MainImage.js'
+import MainImage from '../components/MainImage.js'
 
 class HomePage extends Component {
 
