@@ -16,7 +16,7 @@ body{
 .nav-bar{
     display:flex;
     align-content: center;
-    height: 10%;
+    height: 15%;
     width: 100%; 
 }
 
@@ -51,7 +51,7 @@ body{
 }
 
 
-/* SIGN IN */
+/* SIGN IN & SIGN UP PAGE*/
 
 .member-container{
     display: flex;
@@ -64,7 +64,7 @@ body{
     flex-direction: column;
     justify-content: center;
     width: 35%;
-    padding: 8%;
+    padding: 7%;
 }
 
 .main-image-container{

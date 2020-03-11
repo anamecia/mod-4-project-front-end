@@ -32,8 +32,8 @@ class SignUpPage extends Component {
 
     render(){
         return(
-            <div className="ui grid">
-                <div className="five wide column centered middle aligned">
+            <div className="member-container">
+                <div className="form-container">
                     <form className="ui form" onSubmit={this.handleSubmit}>
                         <div className="field">
                             <label>Username:</label>
@@ -47,11 +47,11 @@ class SignUpPage extends Component {
                             <label>Password confirmation:</label>
                             <input type='password' name='passwordConfirmation' onChange={this.handleOnChange}/>
                         </div>
-                        <input className="member-btn" type='Submit'/>
-                        <p>Already have an AppName account? <Link  className="sign-link" to='/signin'> Sign In </Link></p>
+                        <input className="member-btn" type='Submit' value='Sign Up'/>
+                        <p>Already have an Bettereads account? <Link  className="sign-link" to='/signin'> Sign In </Link></p>
                     </form>
                 </div>
-                <div className="eleven wide column centered middle aligned">
+                <div className="main-image-container">
                     <MainImage />
                 </div>
             </div>
