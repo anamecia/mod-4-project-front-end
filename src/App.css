@@ -36,9 +36,6 @@ body{
     font-weight: 600;
 }
 
-
-
-
 .logo-container{
    display: flex;
    align-items: center;
@@ -49,9 +46,50 @@ body{
 
 .logo{
     font-family: 'Abril Fatface';
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     color:#F99D07;
 }
+
+
+/* SIGN IN */
+
+.member-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.form-container{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    padding: 8%;
+}
+
+.main-image-container{
+    display: flex;
+    width: 65%;
+}
+
+#main-image {
+    width: 90%;
+}
+
+.member-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 15px;
+    width: 35%;
+    background: #081E44;
+    color: #FBF8EA;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    box-shadow: 0 6px #3264D0;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -66,22 +104,9 @@ body{
     padding-top:3vh;
 }
 
-#main-image {
-    width: 100%;
-}
 
-.member-btn {
-    display: inline-block;
-    padding: 10px 25px;
-    width: 35%;
-    margin-right: 10px;
-    background: #081E44;
-    color: #FBF8EA;
-    letter-spacing: 1px;
-    border-radius: 35px;
-    box-shadow: 0 6px #3264D0;
-    cursor: pointer;
-}
+
+
 
 .member-btn:hover{
     color: #FBF8EA;

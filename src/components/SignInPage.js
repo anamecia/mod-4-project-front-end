@@ -25,30 +25,29 @@ class SignInPage extends Component {
             if (data.error) throw Error(data.error)
             this.props.signIn(data)
             this.props.history.push('/userbooks')
-           
           })
           .catch(error => alert(error))
       }
 
     render(){
         return(
-            <div className="ui grid">
-                <div className="five wide column centered middle aligned">
+            <div className="member-container">
+                <div className="form-container">
                     <form className="ui form" onSubmit={this.handleSubmit}>
                         <div className="field">
                             <label>Username:</label>
-                            <input className="sign-input" type='text' name='username' onChange={this.handleOnChange}/>
+                            <input type='text' name='username' onChange={this.handleOnChange}/>
                         </div>
                         <div className="field">
                             <label>Password:</label>
-                            <input className="sign-input" type='password' name='password' onChange={this.handleOnChange}/>
+                            <input type='password' name='password' onChange={this.handleOnChange}/>
                         </div>
                     
-                        <input className='member-btn' type='Submit'/>
+                        <input className='member-btn' type='Submit' value='Sign In'/>
                         <p>Create an account: <Link className= "sign-link" to='/signup'> Sign Up </Link></p>
                     </form>
                 </div>
-                <div className="eleven wide column centered middle aligned">
+                <div className="main-image-container">
                     <MainImage />
                 </div>
             </div>  
