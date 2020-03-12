@@ -12,6 +12,7 @@ body{
     height: 100vh;
 }
 
+
 /* NAVBAR */
 
 .nav-bar{
@@ -93,6 +94,7 @@ body{
     cursor: pointer;
 }
 
+
 /* HOME PAGE */
 
 .slogan-container{
@@ -110,20 +112,47 @@ body{
     padding: 5% 20%;
 }
 
+
 /* PAGE SUB CONTAINER */
 
 .sub-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 80%;
 }
+
 
 /* SEARCH FORM */
 
 .search-form-container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 2%;
+    width: 70%;
+    height: 20%;
+}
+
+.search-form-container div {
+    width: 85%;
+}
+
+#search-form{
+    width: 40%;
+}
+
+#search-btn{
+    border-radius: 100%;
+    background-color: #081E44;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+#magnifying-glass{
+    width: 30px;
+    height: 30px;
 }
 
 

@@ -53,13 +53,13 @@ class  App extends Component{
   render(){
     return (
       <div className='main-container'>
-        <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} updateSearchTerm={this.updateSearchTerm} searchByBookName={this.searchByBookName} searchTerm={this.state.searchTerm}/>
+        <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks}/>
        
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/signin' component={props => <SignInPage {...props} signIn={this.signIn}/>}/>
           <Route exact path='/signup' component={props => <SignUpPage {...props} signIn={this.signIn}/>} />
-          <Route exact path='/userbooks' component={props => <UserShowPage {...props} username={this.state.username}  searchTerm={this.state.searchTerm} searchedBooks={this.state.searchedBooks}/>}/>
+          <Route exact path='/userbooks' component={props => <UserShowPage {...props} username={this.state.username} />}/>
           <Route component={props => <h1>404 - Page not found</h1>} />
         </Switch>
        
