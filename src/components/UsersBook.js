@@ -21,8 +21,10 @@ class Book extends Component {
 
     render(){
         return (
-           <div className="ui card divided three column grid">
-                <img className='book-cover' src={this.props.book.image}/>
+           <div className="book-container">
+                <div className='book-cover-container'>
+                    <img src={this.props.book.image}/>
+                </div>
                 <h1>{this.props.book.title}</h1>
                 <p>{this.props.book.authors && this.props.book.authors.join(', ')}</p>
                 <select value={this.state.status} onChange={this.handleChange}>
