@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchedBookContainer from '../components/SearchedBooksContainer'
 import API from '../API'
-import UserBooksContainer from '../components/UserBooksContainer';
+import UserBooksContainer from '../containers/UserBooksContainer';
 import SearchForm from '../components/SearchForm'
 
 
