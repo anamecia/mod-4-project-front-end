@@ -11,6 +11,7 @@ const signInUrl = baseUrl + 'signin'
 const validateUrl = baseUrl + 'validate'
 const signUpUrl = baseUrl + 'signup'
 const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
+const getReadingsUrl = baseUrl + '/readings/'
 
 
     const get = (url) => 
@@ -65,7 +66,9 @@ const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
     const saveReading = (data) => post (readingsUrl,data)
 
     const patchStatus = (data, id) => patch(readingsUrl, data, id)
+
+    const getReadings = (id) => get(getReadingsUrl+id)
     
 
 
-export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus}
+export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus, getReadings}
