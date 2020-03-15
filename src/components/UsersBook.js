@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import API from '../API'
-import { Link } from 'react-router-dom'
+import BookDetails from './BookMoreDetails'
 
 class Book extends Component {
 
@@ -21,9 +21,11 @@ class Book extends Component {
     }
 
     render(){
+        const { book } = this.props
         return (
            <div className="book-container">
-               <Link to={`userbooks/${this.props.book.id}`}>
+               <BookDetails book={book}/>
+               {/* <Link to={`userbooks/${this.props.book.id}`}>
                 <div className='book-cover-container'>
                     <img src={this.props.book.image}/>
                 </div>
@@ -35,7 +37,7 @@ class Book extends Component {
                     <option>Currently Reading</option>
                 </select>
                 <button onClick={this.handleClick}>Edit</button>
-                </Link>
+                </Link> */}
             </div>
         
         )
