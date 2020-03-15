@@ -12,6 +12,8 @@ const validateUrl = baseUrl + 'validate'
 const signUpUrl = baseUrl + 'signup'
 const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
 const getReadingsUrl = baseUrl + '/readings/'
+const deleteReadingUrl = baseUrl + '/reading/'
+
 
 
     const get = (url) => 
@@ -46,6 +48,11 @@ const getReadingsUrl = baseUrl + '/readings/'
             body: JSON.stringify(data)
         }).then(resp => resp.json())
 
+    const destroy = (url, id) => 
+        fetch(url + id,{
+            method:'DELETE'
+        })
+
 
     const signUp = (username, password, passwordConfirmation) => post(signUpUrl, {user: {username, password, password_confirmation: passwordConfirmation}})
 
@@ -67,8 +74,11 @@ const getReadingsUrl = baseUrl + '/readings/'
 
     const patchStatus = (data, id) => patch(readingsUrl, data, id)
 
-    const getReadings = (id) => get(getReadingsUrl+id)
+    const getReadings = (id) => get(getReadingsUrl + id)
+
+    const deleteReading = (id) => destroy(deleteReadingUrl + id)
     
 
 
-export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus, getReadings}
+export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus, getReadings, deleteReading}
+
