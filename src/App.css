@@ -230,6 +230,13 @@ body{
     width: 60%
 }
 
+.reading-info-container p {
+    color: rgb(228, 89, 89);
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 5%;
+}
+
 .more-details-container{
     display: flex;
     flex-direction: column;

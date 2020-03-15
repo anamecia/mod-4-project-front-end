@@ -3,7 +3,7 @@ import API from '../API'
 import BookDetails from './BookDetails'
 import UserReadingInfo from './UserReadingInfo'
 
-const BookMoreDetails = ({ match }) => {
+const BookMoreDetails = ({ match, history }) => {
 
     const [reading, setReading] = useState(null)
 
@@ -18,7 +18,7 @@ const BookMoreDetails = ({ match }) => {
         <div className='book-more-information'>
             <div className='book-and-reading-info'>
                 <BookDetails book={reading.book}/>
-                <UserReadingInfo reading={reading}/>
+                <UserReadingInfo history={history} reading={reading}/>
             </div>
             <div className='more-details-container'>
                 <h3>Description</h3>

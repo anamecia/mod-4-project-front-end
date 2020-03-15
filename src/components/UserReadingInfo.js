@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import API from "../API"
 
-const UserReadingInfo = ({ reading }) => {
+const UserReadingInfo = ({ reading, history }) => {
 
     const [status, setStatus] = useState(reading.status)
 
@@ -19,13 +19,20 @@ const UserReadingInfo = ({ reading }) => {
         API.patchStatus(data, reading.id)
     }
 
+    const deleteReading = () => {
+        API.deleteReading(reading.id)
+        .then(() => history.push('/userbooks'))
+    }
+
     return(
         <div className='reading-info-container'>
             <select value={status} onChange={handleChange}>
-                    <option>Read</option>
-                    <option>Want to read</option>
-                    <option>Currently Reading</option>
-                </select>
+                <option>Read</option>
+                <option>Want to read</option>
+                <option>Currently Reading</option>
+            </select>
+            <p onClick={deleteReading}> Remove Book </p>
+            
         </div>    
     )
 }
