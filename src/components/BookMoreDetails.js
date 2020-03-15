@@ -15,10 +15,12 @@ const BookMoreDetails = ({ match }) => {
    
     return(
         reading &&
-        <div>
-           <BookDetails book={reading.book}/>
-           <UserReadingInfo reading={reading}/>
-           <div className='more-details-container'>
+        <div className='book-more-information'>
+            <div className='book-and-reading-info'>
+                <BookDetails book={reading.book}/>
+                <UserReadingInfo reading={reading}/>
+            </div>
+            <div className='more-details-container'>
                 <h3>Description</h3>
                 <p>{reading.book.description}</p>
             </div>

@@ -187,6 +187,64 @@ body{
     justify-content: space-around;
 }
 
+/* BOOK MORE INFORMATION */
+
+.book-more-information{
+    display:flex;
+    flex-direction: column;
+    width: 85%;
+    align-content: center;
+    margin-top: 5%;
+}
+
+.book-and-reading-info{
+    display: flex;
+    justify-content: space-around;
+}
+
+.book-details-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin:0;
+}
+
+.book-details-container a{
+    width: 100%;
+    text-align: center;
+}
+
+.book-details-container a h1{
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.reading-info-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.reading-info-container select {
+    width: 60%
+}
+
+.more-details-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.more-details-container h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.more-details-container p {
+    line-height: 1.7rem;
+}
+
 
 
 

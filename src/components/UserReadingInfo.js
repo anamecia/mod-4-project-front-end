@@ -20,7 +20,7 @@ const UserReadingInfo = ({ reading }) => {
     }
 
     return(
-        <div>
+        <div className='reading-info-container'>
             <select value={status} onChange={handleChange}>
                     <option>Read</option>
                     <option>Want to read</option>
