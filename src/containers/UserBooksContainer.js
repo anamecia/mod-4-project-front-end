@@ -1,8 +1,6 @@
 import React from 'react'
 
-import UsersBook from '../components/UsersBook'
 import BookDetails from '../components/BookDetails'
-import Book from '../components/UsersBook'
 
 const UserBooksContainer = ({readBooks, wantToReadBooks, currentlyReadingBooks }) => {
 
