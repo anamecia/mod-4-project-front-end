@@ -8,9 +8,7 @@ import SearchForm from '../components/SearchForm'
 class  UserShowPage extends Component {
 
     state = {  
-        readBooks: [],
-        wantToReadBooks: [],
-        currentlyReadingBooks: [],
+        readings: [],
         searchTerm: '',
         searchedBooks: null
     }
@@ -19,11 +17,16 @@ class  UserShowPage extends Component {
         if(this.props.username === null) {
             this.props.history.push('/signin')
         } else {
-            API.getReadBooks().then(books => this.setState({readBooks: books}))
-            API.getWantToReadBooks().then(books => this.setState({wantToReadBooks: books}))
-            API.getCurrentlyReadingBooks().then(books => this.setState({currentlyReadingBooks: books}))
+            API.getUserReadings().then(readings => this.setState({ readings }))
         }
     }
+
+    filterReadReadings = () => this.state.readings.filter(reading => reading.status === 'Read')
+    
+    filterWantToReadReadings = () => this.state.readings.filter(reading => reading.status === 'Want to read')
+
+    filterCurrentlyReadingReadings = () => this.state.readings.filter(reading => reading.status === 'Currently Reading')
+
 
     updateSearchTerm = (e) => {
         this.setState({
@@ -48,6 +51,9 @@ class  UserShowPage extends Component {
     }
 
     render() { 
+        const readReadings = this.filterReadReadings()
+        const wantToReadReadings = this.filterWantToReadReadings()
+        const currentlyReadingReadings = this.filterWantToReadReadings()
         return (  
             <div className='sub-container'>
                 <SearchForm 
@@ -59,9 +65,9 @@ class  UserShowPage extends Component {
                     books={this.state.searchedBooks} 
                     username={this.props.username}/>
                 : <UserBooksContainer 
-                    readBooks={this.state.readBooks} 
-                    wantToReadBooks={this.state.wantToReadBooks}
-                    currentlyReadingBooks={this.state.currentlyReadingBooks}
+                    readReadings={readReadings} 
+                    wantToReadReadings={wantToReadReadings}
+                    currentlyReadingReadings={currentlyReadingReadings}
                 />}
             </div>
         );

@@ -4,6 +4,7 @@ import React from 'react'
 const baseUrl = 'http://localhost:3000/'
 const bookUrl = baseUrl + 'books'
 const readingsUrl = baseUrl + 'readings/'
+const userReadingsUrl = baseUrl + 'userreadings'
 const userReadBooksUrl = baseUrl + 'userreadbooks'
 const userWantToReadBooksUrl = baseUrl + 'userwanttoreadbooks'
 const userCurrentlyReadingBooksUrl = baseUrl + 'usercurrentlyreadingbooks'
@@ -11,7 +12,7 @@ const signInUrl = baseUrl + 'signin'
 const validateUrl = baseUrl + 'validate'
 const signUpUrl = baseUrl + 'signup'
 const googleApiUrl = 'https://www.googleapis.com/books/v1/volumes?q='
-const getReadingsUrl = baseUrl + '/readings/'
+const getReadingUrl = baseUrl + '/readings/'
 const deleteReadingUrl = baseUrl + '/reading/'
 
 
@@ -62,6 +63,8 @@ const deleteReadingUrl = baseUrl + '/reading/'
 
     const getCurrentlyReadingBooks = () => getwithauth(userCurrentlyReadingBooksUrl)
 
+    const getUserReadings = () => getwithauth(userReadingsUrl)
+
     const signIn = (username, password) => post(signInUrl, { username, password })
 
     const validate  = () => getwithauth(validateUrl)
@@ -74,11 +77,11 @@ const deleteReadingUrl = baseUrl + '/reading/'
 
     const patchStatus = (data, id) => patch(readingsUrl, data, id)
 
-    const getReadings = (id) => get(getReadingsUrl + id)
+    const getReading = (id) => get(getReadingUrl + id)
 
     const deleteReading = (id) => destroy(deleteReadingUrl + id)
     
 
 
-export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus, getReadings, deleteReading}
+export default { getReadBooks, getWantToReadBooks, getCurrentlyReadingBooks, getUserReadings, signIn, validate, signUp, searchBook, saveBook, saveReading, patchStatus, getReading, deleteReading}
 

@@ -2,15 +2,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BookDetails = ({ book }) => {
+const BookDetails = ({ reading }) => {
     return(
         <div className='book-details-container'>
-            <Link to={`/userbooks/${book.id}`}>
+            <Link to={`/userbooks/${reading.id}`}>
                 <div className='book-cover-container'>
-                    <img src={book.image}/>
+                    <img src={reading.book.image}/>
                 </div>
-                <h1>{book.title}</h1>
-                <p>{book.authors && book.authors.join(', ')}</p>
+                <h1>{reading.book.title}</h1>
+                <p>{reading.book.authors && reading.book.authors.join(', ')}</p>
             </Link>
         </div>
     )

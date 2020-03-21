@@ -8,7 +8,7 @@ const BookMoreDetails = ({ match, history }) => {
     const [reading, setReading] = useState(null)
 
     useEffect(() => {
-        API.getReadings(match.params.id)
+        API.getReading(match.params.id)
         .then(reading => setReading(reading))
     },[])
 
@@ -17,7 +17,7 @@ const BookMoreDetails = ({ match, history }) => {
         reading &&
         <div className='book-more-information'>
             <div className='book-and-reading-info'>
-                <BookDetails book={reading.book}/>
+                <BookDetails reading={reading}/>
                 <UserReadingInfo history={history} reading={reading}/>
             </div>
             <div className='more-details-container'>
