@@ -34,7 +34,7 @@ class Book extends Component {
                 <img class='book-cover' src={this.props.book.image}/>
                 <h1>{this.props.book.title}</h1>
                 <p>{this.props.book.authors && this.props.book.authors.join(', ')}</p>
-                <select onChange={this.handleChange}>
+                <select onChange={this.handleChange} value={this.state.status}>
                     <option>Read</option>
                     <option>Want to read</option>
                     <option>Currently Reading</option>
