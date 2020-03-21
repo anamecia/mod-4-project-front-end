@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchedBookContainer from '../components/SearchedBooksContainer'
+import SearchedBookContainer from '../containers/SearchedBooksContainer'
 import API from '../API'
 import UserBooksContainer from '../containers/UserBooksContainer';
 import SearchForm from '../components/SearchForm'
@@ -35,25 +35,25 @@ class  UserShowPage extends Component {
     }
 
     searchByBookName = () => {
-        if(this.state.username === null) {
-          this.props.history.push('/signin')
-        }else {
+        // if(this.state.username === null) {
+        //   this.props.history.push('/signin')
+        // }else {
           API.searchBook(this.state.searchTerm)
           .then(data => data.items.map((book) => {return{
             googleId: book.id,
             title: book.volumeInfo.title,
             description: book.volumeInfo.description,
             authors: book.volumeInfo.authors,
-            image: book.volumeInfo.imageLinks.thumbnail || 'no image available ',
+            image: book.volumeInfo.imageLinks.thumbnail,
             genre: book.volumeInfo.categories}}))
             .then(bookList => this.setState({searchedBooks: bookList}))
-          } 
+        //   } 
     }
 
     render() { 
         const readReadings = this.filterReadReadings()
         const wantToReadReadings = this.filterWantToReadReadings()
-        const currentlyReadingReadings = this.filterWantToReadReadings()
+        const currentlyReadingReadings = this.filterCurrentlyReadingReadings()
         return (  
             <div className='sub-container'>
                 <SearchForm 

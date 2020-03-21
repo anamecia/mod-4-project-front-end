@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Book from './SearchBook'
+import SearchBook from '../components/SearchBook'
 
 const SearchedBooksContainer = ({books, username}) => {
 
 
     return (
         <div className="ui divided three column grid">
-           {books.map(book => <Book book={book} key={book.id}/>)}
+           {books.map(book => <SearchBook book={book} key={book.id}/>)}
         </div>
     )
 }
