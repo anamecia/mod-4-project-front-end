@@ -13,7 +13,7 @@ class  NavBar extends Component {
                 </div>
                 <div className='nav-links'>
                     <Link to='/userbooks' onClick={this.props.goToMyBooks}>My Books</Link>
-                    <Link to='/' onClick={this.props.signOut}>Sign Out </Link>
+                    {this.props.username && <Link to='/' onClick={this.props.signOut}>Sign Out </Link>}
                 </div>
             </div>
         )
