@@ -7,10 +7,10 @@ alt="FOODy" width="340" height="280"/></a>
 
 
 Features: 
-    - search for books 
-    - add books to each of the shelves (read, currently reading and want to read)
-    - change book's shelf
-    - delete book 
+- search for books 
+- add books to each of the shelves (read, currently reading and want to read)
+- change book's shelf
+- delete book 
 
 Note: users need to be logged in to have access to the platform's features.
 
