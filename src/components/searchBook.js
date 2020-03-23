@@ -30,7 +30,7 @@ class Book extends Component {
 
     render(){
         return (
-           <div className="ui card divided three column grid">
+           <div className='search-book'>
                 <img class='book-cover' src={this.props.book.image}/>
                 <h1>{this.props.book.title}</h1>
                 <p>{this.props.book.authors && this.props.book.authors.join(', ')}</p>
