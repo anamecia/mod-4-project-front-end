@@ -40,6 +40,9 @@ Features:
     - change book's shelf
     - delete book 
 
+## Future features or change
+ - Add book reviews
+
 ## Authors 
 
 - Ana Robalo (https://github.com/anamecia)
