@@ -1,13 +1,10 @@
 import React from 'react'
+import SearchedBook from '../components/SearchedBook'
 
-import SearchBook from '../components/SearchBook'
-
-const SearchedBooksContainer = ({books, username}) => {
-
-
+const SearchedBooksContainer = ({books, handleClick}) => {
     return (
-        <div className='search-books-container'>
-           {books.map(book => <SearchBook book={book} key={book.id}/>)}
+        <div className='books-container'>
+            {books.map(book => <SearchedBook book={book} key={book.id} handleClick={handleClick}/>)}
         </div>
     )
 }

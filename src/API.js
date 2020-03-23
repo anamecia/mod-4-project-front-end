@@ -16,7 +16,6 @@ const getReadingUrl = baseUrl + '/readings/'
 const deleteReadingUrl = baseUrl + '/reading/'
 
 
-
     const get = (url) => 
         fetch(url)
         .then(resp => resp.json())
@@ -80,6 +79,7 @@ const deleteReadingUrl = baseUrl + '/reading/'
     const getReading = (id) => get(getReadingUrl + id)
 
     const deleteReading = (id) => destroy(deleteReadingUrl + id)
+
     
 
 

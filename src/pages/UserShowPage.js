@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SearchedBookContainer from '../containers/SearchedBooksContainer'
 import API from '../API'
 import UserBooksContainer from '../containers/UserBooksContainer';
 import SearchForm from '../components/SearchForm'
+import SearchPage from './SearchPage';
 
 
 class  UserShowPage extends Component {
@@ -35,19 +35,15 @@ class  UserShowPage extends Component {
     }
 
     searchByBookName = () => {
-        // if(this.state.username === null) {
-        //   this.props.history.push('/signin')
-        // }else {
           API.searchBook(this.state.searchTerm)
           .then(data => data.items.map((book) => {return{
-            googleId: book.id,
-            title: book.volumeInfo.title,
-            description: book.volumeInfo.description,
-            authors: book.volumeInfo.authors,
-            image: book.volumeInfo.imageLinks.thumbnail,
-            genre: book.volumeInfo.categories}}))
+                googleId: book.id,
+                title: book.volumeInfo.title,
+                description: book.volumeInfo.description,
+                authors: book.volumeInfo.authors,
+                image: book.volumeInfo.imageLinks.thumbnail,
+                genre: book.volumeInfo.categories}}))
             .then(bookList => this.setState({searchedBooks: bookList}))
-        //   } 
     }
 
     render() { 
@@ -61,9 +57,9 @@ class  UserShowPage extends Component {
                     searchByBookName={this.searchByBookName} 
                     searchTerm={this.state.searchTerm}/>
                 {this.state.searchedBooks
-                ? <SearchedBookContainer 
-                    books={this.state.searchedBooks} 
-                    username={this.props.username}/>
+                ? <SearchPage 
+                    {...this.props} 
+                    books={this.state.searchedBooks}/>
                 : <UserBooksContainer 
                     readReadings={readReadings} 
                     wantToReadReadings={wantToReadReadings}
