@@ -5,16 +5,6 @@ import SearchForm from './SearchForm'
 
 class  NavBar extends Component {
 
-    // state = {
-    //     displaySearchForm: false
-    // }
-
-    // toggleSearchForm = () => {
-    //     this.setState({
-    //         displaySearchForm: !this.state.displaySearchForm
-    //     })
-    // }
-
     render(){
         return(
             <div className='nav-bar'>  
@@ -23,8 +13,6 @@ class  NavBar extends Component {
                 </div>
                 <div className='nav-links'>
                     <Link to='/userbooks' onClick={this.props.goToMyBooks}>My Books</Link>
-                    {/* <label  onClick={this.toggleSearchForm}>Search</label>
-                    {this.state.displaySearchForm && <SearchForm updateSearchTerm={this.props.updateSearchTerm} searchByBookName={this.props.searchByBookName} searchTerm={this.props.searchTerm}/>} */}
                     <Link to='/' onClick={this.props.signOut}>Sign Out </Link>
                 </div>
             </div>

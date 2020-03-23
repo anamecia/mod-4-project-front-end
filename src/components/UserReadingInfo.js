@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import API from "../API"
+import StatusDropdown from "./StatusDropdown"
 
 const UserReadingInfo = ({ reading, history }) => {
 
@@ -26,14 +27,9 @@ const UserReadingInfo = ({ reading, history }) => {
 
     return(
         <div className='reading-info-container'>
-            <select value={status} onChange={handleChange}>
-                <option>Read</option>
-                <option>Want to read</option>
-                <option>Currently Reading</option>
-            </select>
+            <StatusDropdown status={status} handleChange={handleChange}/>
             <p onClick={deleteReading}> Remove Book </p>
-            
-        </div>    
+        </div>
     )
 }
 
