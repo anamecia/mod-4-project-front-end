@@ -32,7 +32,7 @@ const SearchedBookDetails = ({ book, history }) => {
                 <SearchedBook book={book}/>
                 <div className='reading-info-container'>
                     <StatusDropdown status={status} handleChange={handleChange}/>
-                    <button onClick={handleClick}>Add Book</button>
+                    <button className='add-btn' onClick={handleClick}>Add Book</button>
                 </div>
             </div>
             <div className='more-details-container'>

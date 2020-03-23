@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const BookDetails = ({ reading }) => {
     return(
         <div className='book-details-container'>
-            <Link to={`/userbooks/${reading.id}`}>
+            <Link to={`/userbooks/${reading.id}`} className='book-details'>
                 <div className='book-cover-container'>
                     <img src={reading.book.image}/>
                 </div>

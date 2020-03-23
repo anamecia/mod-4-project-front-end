@@ -56,7 +56,7 @@ class  App extends Component{
   render(){
     return (
       <div className='main-container'>
-        <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks}/>
+        <NavBar signOut={this.signOut} goToMyBooks={this.goToMyBooks} username={this.state.username}/>
        
         <Switch>
           <Route exact path='/' component={HomePage} />
