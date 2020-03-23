@@ -6,7 +6,7 @@ const SearchedBooksContainer = ({books, username}) => {
 
 
     return (
-        <div className="ui divided three column grid">
+        <div className='search-books-container'>
            {books.map(book => <SearchBook book={book} key={book.id}/>)}
         </div>
     )
